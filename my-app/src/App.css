@@ -1,0 +1,135 @@
+/* Import a clean, modern font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* General body styling for the dark theme */
+body {
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  /* A dark, soft background is key for neumorphism */
+  background: #2e323b;
+  color: #b0b4c3; /* A soft light grey for text */
+}
+
+/* Main container for the entire app */
+.weather-app {
+  width: 100%;
+  max-width: 470px; /* Increased max-width for a larger card */
+  padding: 20px;
+}
+
+/* The main card/container with the neumorphic effect */
+.weather-container {
+  background: #2e323b;
+  border-radius: 40px; /* Softer, more organic corners */
+  padding: 50px; /* Increased padding */
+  text-align: center;
+  border: 2px solid rgba(135, 206, 235, 0.2); /* Subtle blue border */
+  /* The core neumorphic shadows + a new blue "glow" shadow */
+  box-shadow: 10px 10px 25px #252830, 
+              -10px -10px 25px #373c46,
+              0 0 30px rgba(135, 206, 235, 0.3); /* Shiny blue glow */
+  transition: all 0.4s ease;
+}
+
+/* Styling for the search input field to look "pressed in" */
+.weather-container input {
+  width: 100%;
+  padding: 15px 20px;
+  font-size: 16px;
+  font-weight: 400;
+  border-radius: 20px;
+  border: none;
+  background: #2e323b; /* Same as body for seamless look */
+  color: #e0e5ec;
+  margin-bottom: 25px;
+  box-sizing: border-box;
+  /* Inset shadow makes it look pressed into the container */
+  box-shadow: inset 7px 7px 15px #252830, inset -7px -7px 15px #373c46;
+  transition: all 0.3s ease;
+}
+
+/* Style for the input's placeholder text */
+.weather-container input::placeholder {
+  color: #7a7f8d;
+  font-weight: 300;
+}
+
+/* On focus, we can make the input look like it's popping out slightly */
+.weather-container input:focus {
+  outline: none;
+  box-shadow: 3px 3px 6px #252830, -3px -3px 6px #373c46;
+}
+
+/* Styling for the "Get Weather" button */
+.weather-container button {
+  width: 100%;
+  padding: 15px 20px;
+  font-size: 18px;
+  font-weight: 600;
+  border: none;
+  background: #2e323b;
+  color: #2e91b8; /* A pop of color for the button text */
+  cursor: pointer;
+  border-radius: 20px;
+  transition: all 0.2s ease-in-out;
+  /* The same outer shadow as the main container */
+  box-shadow: 7px 7px 15px #252830, -7px -7px 15px #373c46;
+}
+
+/* On hover, make the button look slightly more raised */
+.weather-container button:hover {
+  color: #48aad4;
+  box-shadow: 5px 5px 10px #252830, -5px -5px 10px #373c46;
+}
+
+/* When pressing the button, make it look like it's being pushed in */
+.weather-container button:active {
+  box-shadow: inset 7px 7px 15px #252830, inset -7px -7px 15px #373c46;
+  font-size: 17.5px; /* Subtle text change to enhance the "push" effect */
+}
+
+
+/* Container for the weather results */
+.weather-info {
+  margin-top: 30px;
+  line-height: 1.6;
+  font-size: 18px;
+  opacity: 1; 
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* This class is intended to be added with JavaScript to create a fade-in effect. */
+.weather-info.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Styling for the City Name */
+.weather-info h2 {
+    font-size: 42px; /* Increased font size */
+    font-weight: 600;
+    margin: 0 0 10px 0;
+    color: #e0e5ec;
+}
+
+/* Styling for the Temperature */
+.weather-info .temp {
+    font-size: 60px; /* Increased font size */
+    font-weight: 500;
+    margin: 0;
+    line-height: 1;
+    color: #e0e5ec;
+}
+
+/* Styling for the weather description */
+.weather-info .description {
+    font-size: 22px; /* Increased font size */
+    font-weight: 400;
+    margin-top: 10px;
+    color: #44a0c5; /* Use the accent color here too */
+    text-transform: capitalize;
+}
