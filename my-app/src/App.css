@@ -24,16 +24,19 @@ body {
 /* The main card/container with the neumorphic effect */
 .weather-container {
   background: #2e323b;
-  border-radius: 40px; /* Softer, more organic corners */
-  padding: 50px; /* Increased padding */
+  border-radius: 30px; /* Softer, more organic corners */
+  padding: 20px; /* Reduced padding for smaller height */
   text-align: center;
   border: 2px solid rgba(135, 206, 235, 0.2); /* Subtle blue border */
-  /* The core neumorphic shadows + a new blue "glow" shadow */
   box-shadow: 10px 10px 25px #252830, 
               -10px -10px 25px #373c46,
               0 0 30px rgba(135, 206, 235, 0.3); /* Shiny blue glow */
   transition: all 0.4s ease;
+  height: auto; /* Adjust automatically to content */
+  min-height: 200px; /* Smaller box size */
+  max-width: 320px; /* Optional: keep it compact */
 }
+
 
 /* Styling for the search input field to look "pressed in" */
 .weather-container input {
